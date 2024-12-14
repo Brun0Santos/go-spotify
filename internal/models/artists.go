@@ -1,5 +1,7 @@
 package models
 
+import "fmt"
+
 type Artist struct {
 	ID         int64    `json:"id"`
 	UID        string   `json:"uid"`
@@ -14,4 +16,11 @@ type Artist struct {
 
 	Images []Image `json:"images"`
 	Users  []User  `json:"users"`
+}
+
+func (a *Artist) Compute() {
+	a.URI = fmt.Sprintf("spotify:artist:%s", a.UID)
+	a.Href = fmt.Sprintf("https://api.spotify.com/v1/artists/%s", a.UID)
+	a.ExternalURLs = []string{fmt.Sprintf("https://open.spotify.com/artist/%s", a.UID)}
+	a.Followers = len(a.Users)
 }
