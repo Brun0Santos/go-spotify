@@ -11,5 +11,5 @@ type Image struct {
 }
 
 func (i *Image) Compute() {
-	i.URL = fmt.Sprintf("https://i.scdn.co/images/%s", i.UID)
+	i.URL = fmt.Sprintf("https://i.scdn.co/image/%s", i.UID)
 }
