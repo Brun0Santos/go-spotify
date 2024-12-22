@@ -16,7 +16,6 @@ type Artist struct {
 
 	Images []Image `json:"images"`
 	Users  []User  `json:"users"`
-	Age    uint64  `json:"age"`
 }
 
 func (a *Artist) Compute() {
