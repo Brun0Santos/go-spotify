@@ -37,7 +37,7 @@ func main() {
 	handlerArtists := handler.NewArtistsGet()
 
 	mux := http.NewServeMux()
-	mux.Handle("GET /api/v1/artist/{uid}", handlerArtists)
+	mux.Handle("GET /api/v1/artists/{uid}", handlerArtists)
 
 	if err := http.ListenAndServe(appPort, mux); err != nil {
 		log.Fatal(err)
