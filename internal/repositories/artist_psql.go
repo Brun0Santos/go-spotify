@@ -23,7 +23,7 @@ func (r *ArtistPostgreSQL) GetByUID(uid string) (models.Artist, error) {
 			a.id, a.uid, a.name, a.popularity, a.genres,
 			i.id, i.uid, i.width, i.height,
 			u.id, u.username
-		FROM artists a
+		FROM artists as a
 		LEFT JOIN images i ON a.id = i.artist_id
 		LEFT JOIN artist_user au ON a.id = au.artist_id
 		LEFT JOIN users u ON au.user_id = u.id
